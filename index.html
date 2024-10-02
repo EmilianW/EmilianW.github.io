@@ -13,6 +13,21 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// Function to trigger fade-out effect and navigate to the new page
+			const gamedevLink = document.querySelector('a[href="gamedev.html"]');
+			gamedevLink.addEventListener('click', function (event) {
+				event.preventDefault();  // Prevent immediate navigation
+				document.body.classList.add('fade-out');  // Add fade-out class for animation
+				
+				// Delay redirection until after the fade-out animation completes
+				setTimeout(function () {
+					window.location.href = 'gamedev.html';  // Redirect after the fade-out completes
+				}, 1000);  // Ensure this matches the CSS animation duration (1 second)
+			});
+		});
+	</script>
 	<body class="is-preload">
 		<div id="wrapper">
 			<div id="bg"></div>
@@ -25,10 +40,30 @@
 						<p>Photography &nbsp;&bull;&nbsp; Art &nbsp;&bull;&nbsp; Software</p>
 						<nav>
 							<ul>
-								<li><a href="https://www.instagram.com/emilianwilczek/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="https://github.com/EmilianW" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="https://redacted-assets.itch.io/through-the-waves" class="icon solid fa-gamepad"><span class="label">Through The Waves</span></a></li>
-								<li><a href="mailto: wilczekemilian@protonmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+								<li>
+									<a href="https://www.instagram.com/emilianwilczek/" class="icon brands fa-instagram">
+										<span class="label">Instagram</span>
+									</a>
+									<span class="hover-text">Instagram</span>
+								</li>
+								<li>
+									<a href="https://github.com/EmilianW" class="icon brands fa-github">
+										<span class="label">Github</span>
+									</a>
+									<span class="hover-text">Github</span>
+								</li>
+								<li>
+									<a href="gamedev.html" class="icon solid fa-gamepad">
+										<span class="label">Gamedev</span>
+									</a>
+									<span class="hover-text">Gamedev</span>
+								</li>
+								<li>
+									<a href="mailto:wilczekemilian@protonmail.com" class="icon solid fa-envelope">
+										<span class="label">Email</span>
+									</a>
+									<span class="hover-text">Email</span>
+								</li>
 							</ul>
 						</nav>
 					</header>

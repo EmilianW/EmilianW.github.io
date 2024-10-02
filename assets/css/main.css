@@ -891,6 +891,39 @@ input, select, textarea {
 
 		} }
 
+/* Custom Styles for Hover Text */
+.hover-text {
+	display: block;
+	font-size: 1.25em;
+	margin: 0.75em 0 0.25em 0; 
+	opacity: 0;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: opacity 0.2s ease-in-out;
+	color: white;
+}
+
+#header nav li:hover .hover-text {
+	opacity: 0.75;
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+body.fade-out {
+	animation: fadeOut 1s forwards;
+}
+
 /* Mobile */
 
 	@media screen and (max-width: 736px) {
